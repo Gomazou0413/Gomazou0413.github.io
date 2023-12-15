@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エグゾディア確率計算</title>
+</head>
+<body>
+
+    <h1>エグゾディア初手揃い確率計算</h1>
+
+    <label for="totalCards">デッキの枚数:</label>
+    <input type="number" id="totalCards" min="1" value="40">
+
+    <label for="startingHandSize">初手の枚数:</label>
+    <input type="number" id="startingHandSize" min="1" value="5">
+
+    <button onclick="calculateProbability()">確率計算</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateProbability() {
+            const totalCards = document.getElementById('totalCards').value;
+            const startingHandSize = document.getElementById('startingHandSize').value;
+
+            // エグゾディアの枚数（通常は5枚）
+            const exodiaPieces = 5;
+
+            // エグゾディアが揃う確率の計算
+            const probability = (exodiaPieces / totalCards) * ((exodiaPieces - 1) / (totalCards - 1)) *
+                               ((exodiaPieces - 2) / (totalCards - 2)) * ((exodiaPieces - 3) / (totalCards - 3)) *
+                               ((exodiaPieces - 4) / (totalCards - 4));
+
+            // 百分率に変換して表示
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `エグゾディアが初手で揃う確率は約 ${(probability * 100).toFixed(5)}% です。`;
+        }
+    </script>
+
+</body>
+</html>
