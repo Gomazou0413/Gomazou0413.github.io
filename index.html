@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>エグゾディア確率計算</title>
+    <style>
+        label, input, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -34,7 +40,7 @@
 
             // 百分率に変換して表示
             const resultElement = document.getElementById('result');
-            resultElement.textContent = `エグゾディアが初手で揃う確率は約 ${(probability * 100).toFixed(5)}% です。`;
+            resultElement.textContent = `エグゾディアが初手で揃う確率は約 ${probability * 100}% です。`;
         }
     </script>
 
